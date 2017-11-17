@@ -1,4 +1,7 @@
 FROM ubuntu
+RUN apt-get update -q \
+    && apt-get install subversion unzip -qy \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt/
 COPY jdk-1_5_0_22-linux-amd64.bin .
 RUN set -e ; \
@@ -24,4 +27,3 @@ ENV PATH=$PATH:$ANT_HOME/bin
 WORKDIR /
 
 CMD /bin/bash
-
