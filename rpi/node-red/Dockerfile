@@ -24,10 +24,11 @@ RUN npm install \
 		node-red-contrib-homekit \
 		node-red-contrib-bigtimer \
 		node-red-contrib-looptimer \
-		node-red-contrib-ramp-thermostat \
+		drweaver/node-red-contrib-ramp-thermostat \
 		node-red-contrib-ifttt \
 		node-red-contrib-counter \
-		node-red-contrib-debounce 
+		node-red-contrib-debounce \
+		node-red-contrib-timerswitch
 
 COPY entrypoint.sh .
 
