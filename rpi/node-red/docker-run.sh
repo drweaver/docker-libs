@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MQTT_HOST=192.168.0.27
+MQTT_HOST="192.168.0.27"
 
 echo "MQTT Host set to $MQTT_HOST"
 
