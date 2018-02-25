@@ -11,14 +11,12 @@ RUN set -e ; \
 
 WORKDIR /media
 
-COPY convert.sh .
+COPY convert.sh run.sh /media/
 
+# The Handbrake preset to use - override with e.g. --env PRESET='High Profile'
 ENV PRESET='Android 720p30'
+# The wait between checks for new files, override with e.g. --env INTERVAL='10m', 
+# command is passed to 'sleep' e.g. 20s, 10m, 5h
+ENV INTERVAL='3h'
 
-CMD find ./ -type f -name \*.mkv -execdir /media/convert.sh '{}' \;
-
-
-
-
-    
-
+CMD ./run.sh
