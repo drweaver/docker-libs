@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t handbrake-convert .
+docker build -t handymoose/handbrake-convert .
