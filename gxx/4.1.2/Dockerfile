@@ -20,8 +20,8 @@ RUN set -e ; \
     cd build ; \
     ../configure --disable-checking --enable-languages=c,c++ \
       --enable-multiarch --enable-shared --enable-threads=posix \
-      --program-suffix=-4.1 \
-#      --prefix=/usr/local \
+#      --program-suffix=-4.1 \
+      --prefix=/usr/local/gcc-4.1.3 \
       --with-system-zlib \
       --disable-libunwind-exceptions ;  \
     make -j4 ; \
@@ -32,12 +32,12 @@ RUN set -e ; \
 RUN set -e ; \
     mv /usr/bin/g++ /usr/bin/g++-4.8 ; \
     mv /usr/bin/gcc /usr/bin/gcc-4.8 ; \
-    update-alternatives --install /usr/bin/g++ g++ /usr/local/bin/g++-4.1 20 ; \
-    update-alternatives --install /usr/bin/gcc gcc /usr/local/bin/gcc-4.1 20 ; \
+    update-alternatives --install /usr/bin/g++ g++ /usr/local/gcc-4.1.3/bin/g++ 20 ; \
+    update-alternatives --install /usr/bin/gcc gcc /usr/local/gcc-4.1.3/bin/gcc 20 ; \
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 30 ; \
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 30 ; \
-    update-alternatives --set g++ /usr/local/bin/g++-4.1 ; \
-    update-alternatives --set gcc /usr/local/bin/gcc-4.1 ;
+    update-alternatives --set g++ /usr/local/gcc-4.1.3/bin/g++ ; \
+    update-alternatives --set gcc /usr/local/gcc-4.1.3/bin/gcc ;
 
 
 
