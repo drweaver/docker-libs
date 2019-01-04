@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t garage-control-st-connector .
+docker build -t socket-control-st-connector .
 
